@@ -14,6 +14,7 @@ class CategorySeeder extends Seeder
     {
       Category::create([
         "name"=> "Elektronik",
+        "name"=> "Otomotif",
       ]);
     }
 }

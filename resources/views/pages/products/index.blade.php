@@ -33,20 +33,30 @@
                                 <th>Harga</th>
                                 <th>Stok</th>
                                 <th>Kategori</th>
-                                <th>#</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($products as $product)
                             <tr>
-                            <td>1</td>
+                            <td>{{ $loop->iteration}}</td>
                             <td>{{$product->name}}</td>
                             <td>{{$product->description}}</td>
                             <td>{{$product->sku}}</td>
                             <td>{{$product->price}}</td>
                             <td>{{$product->stock}}</td>
-                            <td>{{$product->category_id}}</td>
-                            <td>#</td>
+                            <td>{{$product->category->name}}</td>
+                            <td>
+                                
+                                <div class="d-flex">
+                                    <a href="/products/edit/{{ $product->id}}" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                    <form action="/{{ $product->id }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                    </form>
+                                </div>
+                            </td>
                             </tr>
                             @endforeach
                             

@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
             "name"=> "Product 1",
             "description" => "Deskripsi Product",
             "sku" => "12345-ok",
-            "price" => 10000,
+            "price" => 1000,
             "stock" => 100,
             "category_id" => 1,
         ]);
